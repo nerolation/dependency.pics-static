@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereum Transaction Dependencies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .block-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .block-header {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .block-image {
+            width: 100%;
+            height: auto;
+        }
+        .loading {
+            text-align: center;
+            padding: 20px;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ethereum Transaction Dependencies</h1>
+    <div id="blocks-container" class="container">
+        <div class="loading">Loading blocks...</div>
+    </div>
+
+    <script>
+        // Get the base URL for GitHub Pages
+        const baseUrl = window.location.hostname === 'localhost' 
+            ? '' 
+            : '/dependency.pics-static';
+
+        async function fetchLatestBlocks() {
+            try {
+                const response = await fetch(`${baseUrl}/data/latest_blocks.json`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const blocks = await response.json();
+                displayBlocks(blocks);
+            } catch (error) {
+                console.error('Error fetching blocks:', error);
+                document.getElementById('blocks-container').innerHTML = 
+                    '<div class="error">Error loading blocks. Please try again later.</div>';
+            }
+        }
+
+        function displayBlocks(blocks) {
+            const container = document.getElementById('blocks-container');
+            container.innerHTML = '';
+
+            blocks.forEach(block => {
+                const card = document.createElement('div');
+                card.className = 'block-card';
+                
+                card.innerHTML = `
+                    <div class="block-header">Block ${block.number}</div>
+                    <img src="${baseUrl}/graphs/${block.number}.png" alt="Dependency graph for block ${block.number}" class="block-image">
+                    <div>Transactions: ${block.transactionCount}</div>
+                    <div>Timestamp: ${new Date(block.timestamp * 1000).toLocaleString()}</div>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        // Fetch blocks when page loads
+        fetchLatestBlocks();
+    </script>
+</body>
+</html>
