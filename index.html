@@ -5,21 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethereum Transaction Dependencies</title>
     <style>
+        /* Overall page styling */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
         }
+        /* Header styling */
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+        }
+        .header-extra {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1em;
+            color: #555;
+        }
+        .header-extra a {
+            text-decoration: none;
+            color: #007acc;
+        }
+        
+        /* Container for the cards */
         .container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 20px;
         }
+        /* Card styling */
         .block-card {
-            border: 1px solid #ddd;
+            background-color: #fff;
+            border: none;
             padding: 15px;
             border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .block-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
         .block-header {
             font-weight: bold;
@@ -34,20 +63,17 @@
         .block-image:hover {
             opacity: 0.8;
         }
-        .loading {
+        .loading, .error, .empty-state {
             text-align: center;
             padding: 20px;
         }
         .error {
             color: red;
-            text-align: center;
-            padding: 20px;
         }
         .empty-state {
-            text-align: center;
-            padding: 20px;
             color: #666;
         }
+        /* View buttons */
         .view-buttons {
             display: flex;
             gap: 10px;
@@ -55,12 +81,13 @@
         }
         .view-btn {
             flex: 1;
-            padding: 5px 10px;
+            padding: 10px 15px;
             background-color: #4CAF50;
-            color: white;
+            color: #fff;
             text-align: center;
             border-radius: 4px;
             text-decoration: none;
+            transition: background-color 0.3s ease;
         }
         .view-btn:hover {
             background-color: #45a049;
@@ -69,12 +96,19 @@
             background-color: #2196F3;
         }
         .view-btn.gantt:hover {
-            background-color: #0b7dda;
+            background-color: #1976D2;
         }
     </style>
 </head>
 <body>
     <h1>Ethereum Transaction Dependencies</h1>
+    <!-- Extra header content centered below the main header -->
+    <div class="header-extra">
+        Built with <span style="color: red;">&#10084;</span> by Toni Wahrstätter | 
+        <a href="https://github.com/nerolation/dependency.pics-static" target="_blank">GitHub Repo</a> | 
+        Last Updated: <span id="last-updated">Loading...</span>
+    </div>
+
     <div id="blocks-container" class="container">
         <div class="loading">Loading blocks...</div>
     </div>
@@ -135,6 +169,23 @@
 
         // Fetch blocks when page loads
         fetchLatestBlocks();
+
+        // Fetch and display the last updated time from last-updated.txt
+        async function fetchLastUpdated() {
+            try {
+                const response = await fetch('last-updated.txt');
+                if (response.ok) {
+                    const text = await response.text();
+                    document.getElementById('last-updated').innerText = text.trim();
+                } else {
+                    document.getElementById('last-updated').innerText = 'Unavailable';
+                }
+            } catch (error) {
+                console.error('Error fetching last updated:', error);
+                document.getElementById('last-updated').innerText = 'Unavailable';
+            }
+        }
+        fetchLastUpdated();
     </script>
 </body>
-</html> 
+</html>

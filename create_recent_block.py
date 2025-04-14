@@ -51,7 +51,7 @@ def main():
         block_data_sorted = []
 
     # Only keep the highest 20 blocks.
-    recent_blocks = block_data_sorted[:20]
+    recent_blocks = block_data_sorted[:51]
 
     # Write the summary to recent_blocks.json with pretty formatting.
     summary_path = os.path.join(GRAPH_DATA, "recent_blocks.json")
