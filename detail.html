@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Detail View</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .detail-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .detail-header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        .block-info {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .view-toggle {
+            display: flex;
+            gap: 0;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .btn.active {
+            background-color: #357a38;
+            font-weight: bold;
+        }
+        .detail-image {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .back-btn {
+            padding: 8px 16px;
+            background-color: #f1f1f1;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .back-btn:hover {
+            background-color: #ddd;
+        }
+        .image-container {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .debug-info {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .view-indicator {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .graph-view {
+            background-color: #e8f5e9;
+            color: #357a38;
+        }
+        .gantt-view {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="detail-container">
+        <div class="detail-header">
+            <a href="index.html" class="back-btn">← Back to Overview</a>
+            <div class="block-info" id="block-info">Block #</div>
+        </div>
+        
+        <div id="view-indicator" class="view-indicator graph-view">Graph View</div>
+        
+        <div class="view-toggle">
+            <button id="graph-btn" class="btn active">Graph View</button>
+            <button id="gantt-btn" class="btn">Gantt View</button>
+        </div>
+        
+        <div id="image-container" class="image-container">
+            <img id="detail-image" class="detail-image" src="" alt="Block detail image">
+        </div>
+        
+        <div id="debug-info" class="debug-info">Loading image information...</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get block number from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const blockNumber = urlParams.get('block');
+            
+            if (!blockNumber) {
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            // Update page with block information
+            document.getElementById('block-info').textContent = `Block ${blockNumber}`;
+            document.title = `Block ${blockNumber} Detail`;
+            
+            // Debug element
+            const debugInfo = document.getElementById('debug-info');
+            const viewIndicator = document.getElementById('view-indicator');
+            
+            // Set initial image (graph view)
+            const detailImage = document.getElementById('detail-image');
+            const graphUrl = `graphs/${blockNumber}.png`;
+            detailImage.src = graphUrl;
+            detailImage.alt = `Dependency graph for block ${blockNumber}`;
+            debugInfo.textContent = `Loading graph image: ${graphUrl}`;
+            
+            detailImage.onload = function() {
+                debugInfo.textContent = `Successfully loaded: ${detailImage.src}`;
+            };
+            
+            detailImage.onerror = function() {
+                debugInfo.textContent = `Error loading: ${detailImage.src}. Falling back to placeholder.`;
+                this.onerror = null;
+                this.src = 'static/placeholder.svg';
+            };
+            
+            // Toggle between graph and Gantt views
+            const graphBtn = document.getElementById('graph-btn');
+            const ganttBtn = document.getElementById('gantt-btn');
+            
+            graphBtn.addEventListener('click', function() {
+                const graphUrl = `graphs/${blockNumber}.png`;
+                detailImage.src = graphUrl;
+                detailImage.alt = `Dependency graph for block ${blockNumber}`;
+                debugInfo.textContent = `Loading graph image: ${graphUrl}`;
+                document.title = `Graph View - Block ${blockNumber}`;
+                
+                // Update view indicator
+                viewIndicator.textContent = "Graph View";
+                viewIndicator.className = "view-indicator graph-view";
+                
+                detailImage.onload = function() {
+                    debugInfo.textContent = `Successfully loaded: ${detailImage.src}`;
+                };
+                
+                detailImage.onerror = function() {
+                    debugInfo.textContent = `Error loading: ${detailImage.src}. Falling back to placeholder.`;
+                    this.onerror = null;
+                    this.src = 'static/placeholder.svg';
+                };
+                
+                graphBtn.classList.add('active');
+                ganttBtn.classList.remove('active');
+            });
+            
+            ganttBtn.addEventListener('click', function() {
+                const ganttUrl = `gantt/${blockNumber}.png`;
+                detailImage.src = ganttUrl;
+                detailImage.alt = `Gantt chart for block ${blockNumber}`;
+                debugInfo.textContent = `Loading Gantt image: ${ganttUrl}`;
+                document.title = `Gantt View - Block ${blockNumber}`;
+                
+                // Update view indicator
+                viewIndicator.textContent = "Gantt View";
+                viewIndicator.className = "view-indicator gantt-view";
+                
+                detailImage.onload = function() {
+                    debugInfo.textContent = `Successfully loaded: ${detailImage.src}`;
+                };
+                
+                detailImage.onerror = function() {
+                    debugInfo.textContent = `Error loading: ${detailImage.src}. Falling back to placeholder.`;
+                    this.onerror = null;
+                    this.src = 'static/gantt-placeholder.svg';
+                };
+                
+                ganttBtn.classList.add('active');
+                graphBtn.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html> 

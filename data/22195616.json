@@ -1,6 +1,5 @@
 {
-  "block_number": "22195616",
-  "node_count": 10,
-  "edge_count": 15,
-  "demo_mode": false
+  "block_number": 22195616,
+  "node_count": 6,
+  "edge_count": 9
 }

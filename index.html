@@ -28,6 +28,11 @@
         .block-image {
             width: 100%;
             height: auto;
+            cursor: pointer;
+            transition: opacity 0.2s ease-in-out;
+        }
+        .block-image:hover {
+            opacity: 0.8;
         }
         .loading {
             text-align: center;
@@ -42,6 +47,29 @@
             text-align: center;
             padding: 20px;
             color: #666;
+        }
+        .view-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .view-btn {
+            flex: 1;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .view-btn:hover {
+            background-color: #45a049;
+        }
+        .view-btn.gantt {
+            background-color: #2196F3;
+        }
+        .view-btn.gantt:hover {
+            background-color: #0b7dda;
         }
     </style>
 </head>
@@ -90,9 +118,15 @@
                 
                 card.innerHTML = `
                     <div class="block-header">Block ${block.block_number}</div>
-                    <img src="graphs/${block.block_number}.png" alt="Dependency graph for block ${block.block_number}" class="block-image">
+                    <a href="detail.html?block=${block.block_number}">
+                        <img src="graphs/${block.block_number}.png" onerror="this.onerror=null;this.src='static/placeholder.svg';" alt="Dependency graph for block ${block.block_number}" class="block-image">
+                    </a>
                     <div>Nodes: ${block.node_count}</div>
                     <div>Edges: ${block.edge_count}</div>
+                    <div class="view-buttons">
+                        <a href="detail.html?block=${block.block_number}" class="view-btn">Graph View</a>
+                        <a href="gantt-view.html?block=${block.block_number}" class="view-btn gantt">Gantt View</a>
+                    </div>
                 `;
                 
                 container.appendChild(card);

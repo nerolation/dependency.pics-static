@@ -1,56 +1,47 @@
 [
   {
-    "block_number": "22195618",
-    "node_count": 0,
-    "edge_count": 0,
-    "demo_mode": false
+    "block_number": 22195618,
+    "node_count": 5,
+    "edge_count": 8
   },
   {
-    "block_number": "22195617",
-    "node_count": 0,
-    "edge_count": 0,
-    "demo_mode": false
+    "block_number": 22195617,
+    "node_count": 7,
+    "edge_count": 12
   },
   {
-    "block_number": "22195616",
-    "node_count": 0,
-    "edge_count": 0,
-    "demo_mode": false
+    "block_number": 22195616,
+    "node_count": 6,
+    "edge_count": 9
   },
   {
-    "block_number": "22195615",
-    "node_count": 0,
-    "edge_count": 0,
-    "demo_mode": false
+    "block_number": 22195615,
+    "node_count": 4,
+    "edge_count": 6
   },
   {
-    "block_number": "22195614",
-    "node_count": 0,
-    "edge_count": 0,
-    "demo_mode": false
+    "block_number": 22195614,
+    "node_count": 8,
+    "edge_count": 15
   },
   {
-    "block_number": "22195613",
-    "node_count": 0,
-    "edge_count": 0,
-    "demo_mode": false
+    "block_number": 22195613,
+    "node_count": 5,
+    "edge_count": 7
   },
   {
-    "block_number": "22195612",
-    "node_count": 0,
-    "edge_count": 0,
-    "demo_mode": false
+    "block_number": 22195612,
+    "node_count": 9,
+    "edge_count": 14
   },
   {
-    "block_number": "22195611",
-    "node_count": 0,
-    "edge_count": 0,
-    "demo_mode": false
+    "block_number": 22195611,
+    "node_count": 3,
+    "edge_count": 4
   },
   {
-    "block_number": "22195610",
-    "node_count": 0,
-    "edge_count": 0,
-    "demo_mode": false
+    "block_number": 22195610,
+    "node_count": 6,
+    "edge_count": 10
   }
 ]
