@@ -60,8 +60,8 @@
                 }
                 const blocks = await response.json();
                 
-                // Filter out the placeholder block
-                const realBlocks = blocks.filter(block => block.number > 0);
+                // Filter out blocks with no nodes
+                const realBlocks = blocks.filter(block => block.node_count > 0);
                 
                 if (realBlocks.length === 0) {
                     displayEmptyState();
@@ -77,7 +77,7 @@
 
         function displayEmptyState() {
             const container = document.getElementById('blocks-container');
-            container.innerHTML = '<div class="empty-state">No blocks available yet. Check back later!</div>';
+            container.innerHTML = '<div class="empty-state">No blocks with transactions available yet. Check back later!</div>';
         }
 
         function displayBlocks(blocks) {
@@ -89,10 +89,10 @@
                 card.className = 'block-card';
                 
                 card.innerHTML = `
-                    <div class="block-header">Block ${block.number}</div>
-                    <img src="graphs/${block.number}.png" alt="Dependency graph for block ${block.number}" class="block-image">
-                    <div>Transactions: ${block.transactionCount}</div>
-                    <div>Timestamp: ${new Date(block.timestamp * 1000).toLocaleString()}</div>
+                    <div class="block-header">Block ${block.block_number}</div>
+                    <img src="graphs/${block.block_number}.png" alt="Dependency graph for block ${block.block_number}" class="block-image">
+                    <div>Nodes: ${block.node_count}</div>
+                    <div>Edges: ${block.edge_count}</div>
                 `;
                 
                 container.appendChild(card);
