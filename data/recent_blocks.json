@@ -1,257 +1,257 @@
 [
   {
-    "block_number": 22290677,
-    "node_count": 242,
-    "edge_count": 93
+    "block_number": 22290804,
+    "node_count": 221,
+    "edge_count": 111
   },
   {
-    "block_number": 22290676,
-    "node_count": 30,
-    "edge_count": 39
+    "block_number": 22290803,
+    "node_count": 120,
+    "edge_count": 32
   },
   {
-    "block_number": 22290675,
-    "node_count": 131,
-    "edge_count": 41
-  },
-  {
-    "block_number": 22290674,
-    "node_count": 132,
-    "edge_count": 47
-  },
-  {
-    "block_number": 22290673,
-    "node_count": 134,
-    "edge_count": 45
-  },
-  {
-    "block_number": 22290672,
-    "node_count": 117,
-    "edge_count": 36
-  },
-  {
-    "block_number": 22290671,
-    "node_count": 126,
-    "edge_count": 47
-  },
-  {
-    "block_number": 22290670,
-    "node_count": 127,
-    "edge_count": 65
-  },
-  {
-    "block_number": 22290669,
-    "node_count": 113,
-    "edge_count": 37
-  },
-  {
-    "block_number": 22290668,
-    "node_count": 214,
-    "edge_count": 107
-  },
-  {
-    "block_number": 22290667,
-    "node_count": 100,
-    "edge_count": 30
-  },
-  {
-    "block_number": 22290666,
-    "node_count": 178,
-    "edge_count": 96
-  },
-  {
-    "block_number": 22290665,
-    "node_count": 173,
-    "edge_count": 49
-  },
-  {
-    "block_number": 22290664,
-    "node_count": 243,
-    "edge_count": 130
-  },
-  {
-    "block_number": 22290663,
-    "node_count": 156,
-    "edge_count": 65
-  },
-  {
-    "block_number": 22290662,
-    "node_count": 47,
-    "edge_count": 31
-  },
-  {
-    "block_number": 22290661,
-    "node_count": 239,
-    "edge_count": 128
-  },
-  {
-    "block_number": 22290660,
-    "node_count": 33,
-    "edge_count": 31
-  },
-  {
-    "block_number": 22290659,
-    "node_count": 57,
+    "block_number": 22290802,
+    "node_count": 39,
     "edge_count": 22
   },
   {
-    "block_number": 22290658,
-    "node_count": 141,
-    "edge_count": 51
+    "block_number": 22290801,
+    "node_count": 128,
+    "edge_count": 52
   },
   {
-    "block_number": 22290657,
-    "node_count": 136,
-    "edge_count": 58
+    "block_number": 22290800,
+    "node_count": 39,
+    "edge_count": 5
   },
   {
-    "block_number": 22290656,
-    "node_count": 107,
-    "edge_count": 35
+    "block_number": 22290799,
+    "node_count": 150,
+    "edge_count": 42
   },
   {
-    "block_number": 22290655,
-    "node_count": 211,
-    "edge_count": 73
+    "block_number": 22290798,
+    "node_count": 144,
+    "edge_count": 43
   },
   {
-    "block_number": 22290654,
-    "node_count": 66,
-    "edge_count": 32
+    "block_number": 22290797,
+    "node_count": 154,
+    "edge_count": 62
   },
   {
-    "block_number": 22290653,
-    "node_count": 109,
-    "edge_count": 21
-  },
-  {
-    "block_number": 22290652,
-    "node_count": 115,
-    "edge_count": 32
-  },
-  {
-    "block_number": 22290651,
-    "node_count": 132,
+    "block_number": 22290796,
+    "node_count": 142,
     "edge_count": 55
   },
   {
-    "block_number": 22290650,
-    "node_count": 160,
-    "edge_count": 57
+    "block_number": 22290795,
+    "node_count": 120,
+    "edge_count": 48
   },
   {
-    "block_number": 22290649,
+    "block_number": 22290794,
     "node_count": 107,
-    "edge_count": 45
+    "edge_count": 55
   },
   {
-    "block_number": 22290648,
-    "node_count": 103,
-    "edge_count": 24
+    "block_number": 22290793,
+    "node_count": 122,
+    "edge_count": 48
   },
   {
-    "block_number": 22290647,
-    "node_count": 166,
-    "edge_count": 49
+    "block_number": 22290792,
+    "node_count": 171,
+    "edge_count": 71
   },
   {
-    "block_number": 22290646,
-    "node_count": 143,
-    "edge_count": 56
+    "block_number": 22290791,
+    "node_count": 113,
+    "edge_count": 22
   },
   {
-    "block_number": 22290645,
-    "node_count": 47,
-    "edge_count": 4
+    "block_number": 22290790,
+    "node_count": 122,
+    "edge_count": 42
   },
   {
-    "block_number": 22290644,
-    "node_count": 152,
-    "edge_count": 65
-  },
-  {
-    "block_number": 22290643,
-    "node_count": 106,
-    "edge_count": 32
-  },
-  {
-    "block_number": 22290642,
-    "node_count": 174,
-    "edge_count": 51
-  },
-  {
-    "block_number": 22290641,
-    "node_count": 152,
+    "block_number": 22290789,
+    "node_count": 141,
     "edge_count": 47
   },
   {
-    "block_number": 22290640,
-    "node_count": 99,
-    "edge_count": 43
+    "block_number": 22290788,
+    "node_count": 121,
+    "edge_count": 47
   },
   {
-    "block_number": 22290639,
-    "node_count": 119,
-    "edge_count": 40
-  },
-  {
-    "block_number": 22290638,
-    "node_count": 167,
-    "edge_count": 46
-  },
-  {
-    "block_number": 22290637,
-    "node_count": 196,
-    "edge_count": 88
-  },
-  {
-    "block_number": 22290636,
-    "node_count": 5,
-    "edge_count": 3
-  },
-  {
-    "block_number": 22290635,
-    "node_count": 103,
-    "edge_count": 31
-  },
-  {
-    "block_number": 22290634,
-    "node_count": 119,
-    "edge_count": 33
-  },
-  {
-    "block_number": 22290633,
-    "node_count": 107,
-    "edge_count": 43
-  },
-  {
-    "block_number": 22290632,
-    "node_count": 156,
-    "edge_count": 68
-  },
-  {
-    "block_number": 22290631,
-    "node_count": 213,
-    "edge_count": 85
-  },
-  {
-    "block_number": 22290630,
-    "node_count": 135,
+    "block_number": 22290787,
+    "node_count": 121,
     "edge_count": 61
   },
   {
-    "block_number": 22290629,
-    "node_count": 223,
-    "edge_count": 96
+    "block_number": 22290786,
+    "node_count": 169,
+    "edge_count": 54
   },
   {
-    "block_number": 22290628,
+    "block_number": 22290785,
+    "node_count": 158,
+    "edge_count": 61
+  },
+  {
+    "block_number": 22290784,
+    "node_count": 20,
+    "edge_count": 22
+  },
+  {
+    "block_number": 22290783,
+    "node_count": 68,
+    "edge_count": 23
+  },
+  {
+    "block_number": 22290782,
+    "node_count": 130,
+    "edge_count": 49
+  },
+  {
+    "block_number": 22290781,
+    "node_count": 166,
+    "edge_count": 50
+  },
+  {
+    "block_number": 22290780,
+    "node_count": 29,
+    "edge_count": 12
+  },
+  {
+    "block_number": 22290779,
+    "node_count": 305,
+    "edge_count": 125
+  },
+  {
+    "block_number": 22290778,
+    "node_count": 36,
+    "edge_count": 12
+  },
+  {
+    "block_number": 22290777,
+    "node_count": 226,
+    "edge_count": 110
+  },
+  {
+    "block_number": 22290776,
+    "node_count": 163,
+    "edge_count": 121
+  },
+  {
+    "block_number": 22290775,
+    "node_count": 8,
+    "edge_count": 4
+  },
+  {
+    "block_number": 22290772,
+    "node_count": 159,
+    "edge_count": 115
+  },
+  {
+    "block_number": 22290771,
+    "node_count": 70,
+    "edge_count": 14
+  },
+  {
+    "block_number": 22290770,
+    "node_count": 119,
+    "edge_count": 53
+  },
+  {
+    "block_number": 22290769,
+    "node_count": 94,
+    "edge_count": 49
+  },
+  {
+    "block_number": 22290768,
+    "node_count": 187,
+    "edge_count": 73
+  },
+  {
+    "block_number": 22290767,
+    "node_count": 212,
+    "edge_count": 257
+  },
+  {
+    "block_number": 22290766,
+    "node_count": 90,
+    "edge_count": 37
+  },
+  {
+    "block_number": 22290765,
     "node_count": 54,
-    "edge_count": 15
+    "edge_count": 27
   },
   {
-    "block_number": 22290627,
+    "block_number": 22290764,
+    "node_count": 125,
+    "edge_count": 54
+  },
+  {
+    "block_number": 22290763,
+    "node_count": 263,
+    "edge_count": 139
+  },
+  {
+    "block_number": 22290762,
+    "node_count": 202,
+    "edge_count": 97
+  },
+  {
+    "block_number": 22290761,
+    "node_count": 41,
+    "edge_count": 8
+  },
+  {
+    "block_number": 22290760,
     "node_count": 48,
-    "edge_count": 6
+    "edge_count": 46
+  },
+  {
+    "block_number": 22290759,
+    "node_count": 40,
+    "edge_count": 3
+  },
+  {
+    "block_number": 22290758,
+    "node_count": 193,
+    "edge_count": 81
+  },
+  {
+    "block_number": 22290757,
+    "node_count": 106,
+    "edge_count": 38
+  },
+  {
+    "block_number": 22290756,
+    "node_count": 225,
+    "edge_count": 107
+  },
+  {
+    "block_number": 22290755,
+    "node_count": 73,
+    "edge_count": 26
+  },
+  {
+    "block_number": 22290754,
+    "node_count": 168,
+    "edge_count": 66
+  },
+  {
+    "block_number": 22290753,
+    "node_count": 19,
+    "edge_count": 12
+  },
+  {
+    "block_number": 22290752,
+    "node_count": 66,
+    "edge_count": 74
   }
 ]
